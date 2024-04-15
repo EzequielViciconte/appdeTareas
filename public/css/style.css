@@ -1,0 +1,247 @@
+body{
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+.Seccion{
+    width: 90%;
+    margin: 0 auto;
+}
+
+form .Iconos .Seleccionado{
+    background-color: #32D657;
+}
+
+form .SeleccionadoProgreso{
+    border: #3662E3 2px solid;
+}
+
+.Invisible{
+    display: none!important
+}
+
+/** Header Titulo **/
+.divTitulo{
+    display: flex;
+}
+.logo{
+    padding: 1rem;
+}
+.lapiz{
+    padding: 1rem;
+}
+.subtitulo{
+    font-size: 1rem;
+    margin: -2rem 0rem 2rem 1rem;
+}
+h1{
+    font-weight:400;
+    font-size: 2.5rem;
+}
+
+
+/* DivTareas */
+.divTarea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: yellow;
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.divEditar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.EnProgreso{
+    background-color:#F5D565 ;
+}
+.Completado{
+    background-color: #A0ECB1;
+}
+.SinHacer{
+    background-color:#F7D4D3 ;
+}
+.PorHacer{
+    background-color: #E3E8EF;
+}
+.divFondo {
+    background: white;
+    width: 5%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+.fondoEnProgreso{
+    background-color:#E9A23B;
+}
+.fondoCompletado{
+    background-color:#32D657 ;
+}
+.fondoSinHacer{
+    background-color: #DD524C;
+}
+.fondoPorHacer{
+    background-color: #E3E8EF;
+}
+
+.IconoTarea{
+    width: 100%;
+}
+
+.divText{
+    flex-basis: 80%;
+}
+.TareaNombre{
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex-basis: 90%;
+}
+
+.Descripcion{
+    width: 80%;
+}
+
+/* Formulario Editar Tarea */
+.EditarTareaFondo{
+    background-color: rgba(0, 0, 0, 0.308);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.FormEditarFondo{
+    background-color: white;
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Formulario para editar */
+.HeaderFormulario{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.TareaForm{
+    display: flex;
+    flex-direction: column;
+}
+.TareaForm label{
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding-bottom:.5rem;
+}
+.InputForm{
+    padding:.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 1rem;
+    border: .5px solid rgb(170, 165, 165);
+    margin-bottom: 1.5rem;
+}
+
+.IconText{
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.Iconos{
+    display: flex;
+}
+.Iconos .divFondo{
+    background-color: gray;
+    margin:  0rem 1rem 1.5rem 0rem;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.IconoProgreso{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+.divIcono{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 0.1rem;
+    border-radius: 14px;
+}
+.divIcono p {
+    padding-left: 1rem;
+    font-size: 0.87rem;
+    font-weight:600 ;
+}
+.divIcono .divFondo{
+    width: 10%;
+}
+
+.FondoIcono{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+.BtnDiv{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+.Btn{
+    text-decoration: none;
+    background-color: #3662E3;
+    border-radius: 10px;
+    padding: .5rem;
+    margin-left: 1rem;
+    display: flex;
+    color: white;
+}
+
+
+/* CSS PARA TAMAÑO 1024 */
+@media only screen and (min-width:1024px){
+    .FormEditarFondo{
+        width: 70%;
+    }
+
+    .Seccion{
+        width: 70%;
+
+    }
+}
+@media only screen and (min-width:1280px){
+    .FormEditarFondo {
+        width: 40%;
+        height: 90%;
+        border-radius: 1rem;
+        
+    }
+    .Seccion{
+        width: 50%;
+    }
+    .FormEditarFondo .Formulario{
+        width: 80%;
+    }
+    .FormEditarFondo .HeaderFormulario{
+        width: 80%;
+    }
+}

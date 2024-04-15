@@ -1,0 +1,80 @@
+extends layout 
+
+block contenido
+    section.Seccion.SeccionTareas 
+        .divTitulo 
+            img(src="./img/Logo.svg", alt="ImgLogo" class="logo")
+            h1 Mi Tablero de Tareas 
+            img(src="./img/Edit_duotone.svg", alt="Lapiz" class="lapiz")
+        p.subtitulo Tareas para mantenerte ordenado
+        .divTareas 
+            each tarea in Tareas
+                div(class=`divTarea ${tarea.Progreso}` data-id=tarea._id)
+                    .divFondo.Iconos
+                        img(src=`./img/${tarea.Icono}.png` data-icotar=tarea.Icono alt="Imagen" class="IconoTarea")
+                    .divText 
+                        p.TareaNombre=tarea.Titulo
+                        p.Descripcion=tarea.Descripcion
+                    .divFondo(class=`fondo${tarea.Progreso} Progreso`)
+                        img(src=`./img/${tarea.Progreso}.svg`, data-progreso=tarea.Progreso class=`IconoTarea`)
+                    .divEditar 
+            .divTarea.AgregarTarea
+                .divFondo.fondoEnProgreso
+                    a(href="")
+                        img(src="./img/Add_round_duotone.svg", alt="") 
+                p.TareaNombre Agregar Tarea
+                .divEditar
+        .EditarTareaFondo
+            .FormEditarFondo
+                .HeaderFormulario.Seccion
+                    p Detalles de la tarea
+                    img(src="./img/close_ring_duotone-1.svg" class='cerrar' alt="Cerrar")
+                .Formulario.Seccion
+                    form(action="", method="get")
+                        .TareaForm
+                            label(for="Nombre") Nombre De La Tarea 
+                            input(type="text" placeholder="Agregue El Nombre de su Tarea" class="InputForm InputFormNombre")
+                        .TareaForm 
+                            label(for="Descripcion") Descripcion 
+                            textarea(placeholder="Agregue una descripcion (opcional)" class="InputForm InputFormDescripcion")
+                        .IconosTarea
+                            p.IconText Iconos
+                            .Iconos 
+                                .divFondo.Icono.Ejercicio(data-icono='Ejercicio')
+                                    i(class="fa-solid fa-dumbbell" )
+                                    .FondoIcono
+                                .divFondo.Icono.Libro(data-icono='Libro')
+                                    i(class="fa-solid fa-book")
+                                    .FondoIcono
+                                .divFondo.Icono.reloj(data-icono='reloj')
+                                    i(class="fa-solid fa-clock ")
+                                    .FondoIcono
+                                .divFondo.Icono.Cafe(data-icono='Cafe')
+                                    i(class="fa-solid fa-truck-fast")
+                                    .FondoIcono
+                        .IconoProgreso
+                            .divIcono.EnProgresoForm(data-Progreso='EnProgreso')
+                                .divFondo.fondoEnProgreso 
+                                    img(src="./img/EnProgreso.svg", alt="")
+                                p En Progreso
+                            .divIcono.CompletadoForm(data-Progreso='Completado')
+                                .divFondo.fondoCompletado 
+                                    img(src="./img/Completado.svg", alt="")
+                                p Completado
+                            .divIcono.SinHacerForm(data-Progreso='SinHacer')
+                                .divFondo.fondoSinHacer 
+                                    img(src="./img/SinHacer.svg", alt="")
+                                p Sin Hacer
+                        .BtnDiv 
+                            a(href="#" class="Borrar Btn") Borrar
+                                img(src="./img/trash.svg", alt="") 
+                            a(href="#" class="Guardar Btn") Guardar
+                                img(src="./img/Done_round.svg", alt="")
+                            a(href="#" class="Crear Btn") Crear
+                                img(src="./img/Done_round.svg", alt="")
+                             
+
+
+
+
+
