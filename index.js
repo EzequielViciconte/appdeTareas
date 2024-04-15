@@ -6,6 +6,7 @@ const MongoStore = require('connect-mongo');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 
+const port = process.env.PORT || 3000
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 // Habilitar pug
+app.set("views", __dirname + "/views");
 app.set('view engine','pug')
 
 app.use(session({
@@ -29,4 +31,4 @@ app.use(express.static(path.join(__dirname,"public")));
 
 app.use('/',routes());
 
-app.listen(3000)
+app.listen(port)
