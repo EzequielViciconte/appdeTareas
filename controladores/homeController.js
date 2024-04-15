@@ -38,7 +38,7 @@ exports.Home =  async (req,res)=>{
     }
 
     const Tareas = await tareas.find({usuarioId:ipDisp});
-    res.render('Home',{
+    res.render('home',{
         NombrePagina:'App de Tareas',
         Tareas
     })
